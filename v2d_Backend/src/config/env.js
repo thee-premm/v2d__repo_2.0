@@ -11,6 +11,7 @@ dotenv.config({ path: path.resolve(__dirname, "../../.env") });
 export const env = {
   PORT: process.env.PORT || 5000,
   NODE_ENV: process.env.NODE_ENV || "development",
+
   DB: {
     host: process.env.DB_HOST || "localhost",
     port: parseInt(process.env.DB_PORT || "5432", 10),
@@ -18,11 +19,13 @@ export const env = {
     user: process.env.DB_USER || "postgres",
     password: process.env.DB_PASSWORD || "postgres",
   },
+
   REDIS: {
     host: process.env.REDIS_HOST || "localhost",
     port: parseInt(process.env.REDIS_PORT || "6379", 10),
     password: process.env.REDIS_PASSWORD || undefined,
   },
+
   JWT: {
     secret:
       process.env.JWT_SECRET ||
