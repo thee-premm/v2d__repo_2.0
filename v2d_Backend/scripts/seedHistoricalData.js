@@ -293,7 +293,7 @@ async function seedHistoricalData() {
 
     await client.query('COMMIT');
 
-    logger.info('✅ 30-Day Historical Data Seeding Completed Successfully:');
+    logger.info(' 30-Day Historical Data Seeding Completed Successfully:');
     logger.info(`   - Meal Slots Created: ${totalSlotsCreated} (Breakfast, Lunch, Dinner across 30 days)`);
     logger.info(`   - Exam Period Flagged: Days 6 to 11 in past (Mid-Term Exam Period)`);
     logger.info(`   - Votes Ingested: ${totalVotesCreated}`);
@@ -302,7 +302,7 @@ async function seedHistoricalData() {
     logger.info('===============================================================');
   } catch (error) {
     await client.query('ROLLBACK');
-    logger.error('❌ Historical Seeding Failed:', error);
+    logger.error(' Historical Seeding Failed:', error);
     process.exit(1);
   } finally {
     client.release();
