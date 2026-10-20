@@ -1,31 +1,42 @@
 {
-  "name": "v2d-proj-repo-2",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "v2d-backend",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Vote2Dine API — intention-driven demand management for campus mess systems",
+  "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20.11"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:create": "node scripts/createDb.js",
+    "db:migrate": "node scripts/migrate.js",
+    "db:status": "node scripts/migrate.js --status",
+    "db:setup": "node scripts/createDb.js && node scripts/migrate.js",
+    "db:seed:demo": "node scripts/seedDemo.js",
+    "test": "node --test --test-concurrency=1 --test-reporter=spec \"test/**/*.test.js\"",
+    "test:unit": "node --test --test-reporter=spec \"test/unit/**/*.test.js\"",
+    "bootstrap": "node scripts/bootstrapInstitution.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thee-premm/v2d__repo_2.0.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/thee-premm/v2d__repo_2.0/issues"
   },
   "homepage": "https://github.com/thee-premm/v2d__repo_2.0#readme",
   "dependencies": {
-    "bcrypt": "^6.0.0",
-    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^18.0.3",
     "express": "^5.2.1",
-    "ioredis": "^6.0.0",
-    "jsonwebtoken": "^9.0.3",
-    "pg": "^8.23.0"
-  },
-  "type": "module"
+    "helmet": "^8.1.0",
+    "pg": "^8.23.0",
+    "vote2dine": "file:..",
+    "zod": "^3.25.76"
+  }
 }

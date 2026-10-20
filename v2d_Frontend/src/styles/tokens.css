@@ -1,0 +1,217 @@
+/*
+ * Vote2Dine design tokens.
+ *
+ * Identity: the mess token — a perforated meal coupon. Deep mess-hall green
+ * for trust and operations, turmeric as a sparing signature accent, warm
+ * paper neutrals. Hairline rules instead of shadows; small radii; IBM Plex
+ * Sans for text and Plex Mono for figures, times and roll numbers.
+ *
+ * Semantic intent colours were chosen so YES and NO remain distinguishable
+ * under colour-vision deficiency (green vs turmeric, validated ΔE 12.8), and
+ * never carry meaning alone: every use pairs them with a label or icon.
+ */
+:root {
+  color-scheme: light;
+
+  /* Neutrals */
+  --paper: #f4f2ec;
+  --surface: #fcfcfa;
+  --surface-2: #efece4;
+  --surface-3: #e6e2d8;
+  --ink: #17241f;
+  --ink-2: #3c4a44;
+  --ink-3: #5b6761;
+  --line: #ddd8cc;
+  --line-strong: #bdb6a6;
+
+  /* Brand */
+  --brand: #1e5a43;
+  --brand-hover: #174836;
+  --brand-ink: #f7f6f1;
+  --brand-soft: #e1ebe4;
+  --brand-text: #1b5640;
+  --accent: #d4851f;
+  --accent-soft: #f7e9d3;
+  --accent-text: #8a5410;
+  --rail: #14251f;
+  --rail-ink: #dfe7e2;
+  --rail-ink-2: #9fb2a9;
+  --rail-active: #22392f;
+
+  /* Intent (declaration) */
+  --yes: #1f7a57;
+  --yes-soft: #dcefe4;
+  --yes-text: #155a3f;
+  --no: #c2711c;
+  --no-soft: #f6e6d1;
+  --no-text: #844b0f;
+  --unvoted: #737a82;
+  --unvoted-soft: #e9e9ec;
+  --unvoted-text: #4d535a;
+
+  /* Status (state) */
+  --ok: #1f7a57;
+  --ok-soft: #dcefe4;
+  --ok-text: #155a3f;
+  --warn: #a36900;
+  --warn-soft: #fbefd2;
+  --warn-text: #7a4f00;
+  --danger: #b3261e;
+  --danger-soft: #f8e0dd;
+  --danger-text: #8c1d17;
+  --info: #2e5e8c;
+  --info-soft: #e0e9f3;
+  --info-text: #234a6f;
+
+  /* Data viz (validated: light ΔE CVD 12.8; turmeric needs labels — always shipped) */
+  --viz-1: #1f7a57;
+  --viz-2: #d4851f;
+  --viz-grid: #e4e0d6;
+  --viz-axis: #bdb6a6;
+  --viz-track: #e9e7e1;
+
+  /* Type */
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-md: 0.875rem;
+  --text-base: 0.9375rem;
+  --text-lg: 1.0625rem;
+  --text-xl: 1.3125rem;
+  --text-2xl: 1.625rem;
+  --text-3xl: 2.125rem;
+  --leading: 1.5;
+
+  /* Space (4 px base) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+
+  /* Shape & depth */
+  --radius-sm: 3px;
+  --radius: 4px;
+  --radius-lg: 6px;
+  --shadow-overlay: 0 12px 32px rgb(20 30 26 / 0.18), 0 2px 6px rgb(20 30 26 / 0.08);
+  --focus: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent);
+
+  /* Layout */
+  --rail-width: 248px;
+  --content-max: 1240px;
+  --reading-max: 720px;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 140ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #0f1513;
+    --surface: #151c19;
+    --surface-2: #1b2420;
+    --surface-3: #232e29;
+    --ink: #e8eee9;
+    --ink-2: #bcc8c1;
+    --ink-3: #8f9c95;
+    --line: #2a3530;
+    --line-strong: #3d4a44;
+    --brand: #49b386;
+    --brand-hover: #5cc196;
+    --brand-ink: #0b1511;
+    --brand-soft: #1b3128;
+    --brand-text: #7fd0ab;
+    --accent: #d9902f;
+    --accent-soft: #3a2a14;
+    --accent-text: #f0bd72;
+    --rail: #0b110f;
+    --rail-ink: #dfe7e2;
+    --rail-ink-2: #8c9e95;
+    --rail-active: #1a2a23;
+    --yes: #3fa77c;
+    --yes-soft: #17302a;
+    --yes-text: #86d6b1;
+    --no: #d38936;
+    --no-soft: #36260f;
+    --no-text: #f0bd72;
+    --unvoted: #8d949c;
+    --unvoted-soft: #252b2f;
+    --unvoted-text: #c3c9cf;
+    --ok: #3fa77c;
+    --ok-soft: #17302a;
+    --ok-text: #86d6b1;
+    --warn: #e0a43a;
+    --warn-soft: #34290f;
+    --warn-text: #f2c97a;
+    --danger: #e0645b;
+    --danger-soft: #3a1917;
+    --danger-text: #f3a19a;
+    --info: #6aa2d6;
+    --info-soft: #172636;
+    --info-text: #a9cbea;
+    --viz-1: #2a8c62;
+    --viz-2: #c9781f;
+    --viz-grid: #26302c;
+    --viz-axis: #3d4a44;
+    --viz-track: #222b27;
+    --shadow-overlay: 0 12px 32px rgb(0 0 0 / 0.5);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0f1513;
+  --surface: #151c19;
+  --surface-2: #1b2420;
+  --surface-3: #232e29;
+  --ink: #e8eee9;
+  --ink-2: #bcc8c1;
+  --ink-3: #8f9c95;
+  --line: #2a3530;
+  --line-strong: #3d4a44;
+  --brand: #49b386;
+  --brand-hover: #5cc196;
+  --brand-ink: #0b1511;
+  --brand-soft: #1b3128;
+  --brand-text: #7fd0ab;
+  --accent: #d9902f;
+  --accent-soft: #3a2a14;
+  --accent-text: #f0bd72;
+  --rail: #0b110f;
+  --rail-ink: #dfe7e2;
+  --rail-ink-2: #8c9e95;
+  --rail-active: #1a2a23;
+  --yes: #3fa77c;
+  --yes-soft: #17302a;
+  --yes-text: #86d6b1;
+  --no: #d38936;
+  --no-soft: #36260f;
+  --no-text: #f0bd72;
+  --unvoted: #8d949c;
+  --unvoted-soft: #252b2f;
+  --unvoted-text: #c3c9cf;
+  --ok: #3fa77c;
+  --ok-soft: #17302a;
+  --ok-text: #86d6b1;
+  --warn: #e0a43a;
+  --warn-soft: #34290f;
+  --warn-text: #f2c97a;
+  --danger: #e0645b;
+  --danger-soft: #3a1917;
+  --danger-text: #f3a19a;
+  --info: #6aa2d6;
+  --info-soft: #172636;
+  --info-text: #a9cbea;
+  --viz-1: #2a8c62;
+  --viz-2: #c9781f;
+  --viz-grid: #26302c;
+  --viz-axis: #3d4a44;
+  --viz-track: #222b27;
+  --shadow-overlay: 0 12px 32px rgb(0 0 0 / 0.5);
+}
