@@ -1,6 +1,8 @@
 v2d_Backend/node_modules/
 v2d_Backend/.env
 v2d_Frontend/node_modules/
+v2d_Frontend/dist/
 v2d_Frontend/.env
+v2d_Frontend/e2e/out/
 *.log
 .DS_Store

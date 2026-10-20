@@ -1,0 +1,16 @@
+{
+  "name": "vote2dine",
+  "private": true,
+  "description": "Vote2Dine — intention-driven demand management for campus mess systems",
+  "scripts": {
+    "install:all": "npm --prefix v2d_Backend install && npm --prefix v2d_Frontend install",
+    "db:setup": "npm --prefix v2d_Backend run db:setup",
+    "db:seed:demo": "npm --prefix v2d_Backend run db:seed:demo",
+    "dev:api": "npm --prefix v2d_Backend run dev",
+    "dev:web": "npm --prefix v2d_Frontend run dev",
+    "build": "npm --prefix v2d_Frontend run build",
+    "start": "npm --prefix v2d_Backend start",
+    "test": "npm --prefix v2d_Backend test && npm --prefix v2d_Frontend test",
+    "typecheck": "npm --prefix v2d_Frontend run typecheck"
+  }
+}
